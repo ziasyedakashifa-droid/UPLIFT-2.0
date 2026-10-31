@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <small>STUDENT WELLBEING · REFLECTION · SUPPORT</small>
+
+        <h1>
+            Your wellbeing matters.
+            Your journey starts here.
+        </h1>
+
+        <p>
+            UPLIFT is a student wellbeing platform designed to help you
+            reflect on your emotions, understand your mood patterns
+            and discover pathways to human support.
+        </p>
+
+        {% if session.get('user_id') %}
+
+            <a class="btn" href="{{ url_for('dashboard') }}">
+                Go to My Dashboard
+            </a>
+
+        {% else %}
+
+            <div class="hero-buttons">
+
+                <a class="btn" href="{{ url_for('signup') }}">
+                    Get Started
+                </a>
+
+                <a class="btn secondary-btn" href="{{ url_for('login') }}">
+                    Login
+                </a>
+
+            </div>
+
+        {% endif %}
+
+    </div>
+
+    <div class="circle">
+
+        ✦
+
+        <small>
+            Pause<br>
+            Reflect<br>
+            Reconnect
+        </small>
+
+    </div>
+
+</section>
+
+
+<section class="cards">
+
+    <article>
+
+        <h2>MindMirror</h2>
+
+        <p>
+            Reflect on your thoughts and receive a gentle
+            AI-generated response powered by Gemma.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <h2>MoodMap</h2>
+
+        <p>
+            Record your daily mood and observe your
+            personal check-in history.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <h2>HumanConnect</h2>
+
+        <p>
+            Record a request for human support
+            through our demonstration platform.
+        </p>
+
+    </article>
+
+</section>
+
+
+<p class="warning">
+    Your wellbeing matters. This is a hackathon prototype,
+    not a replacement for professional mental-health support.
+</p>
+
+{% endblock %}
